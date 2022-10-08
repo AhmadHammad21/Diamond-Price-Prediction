@@ -40,11 +40,12 @@ table = st.slider("Select your table width in mm", 43, 95)
 
 depth = z / ((x + y + 0.1) / 2)
 
+volume = x * y * z
 
-columns = ['carat', 'cut', 'color', 'clarity', 'depth', 'table', 'x', 'y', 'z']
+columns = ['carat', 'cut', 'color', 'clarity', 'depth', 'table', 'x', 'y', 'z' ,'volume']
 
 def predict():
-    row = np.array([carat, cut, color, clarity, depth, table, x, y, z])
+    row = np.array([carat, cut, color, clarity, depth, table, x, y, z, volume])
     
     X = pd.DataFrame([row], columns=columns)
     
